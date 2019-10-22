@@ -7,4 +7,4 @@
 ###### run mongo in termianl
 ###### on mac: sudo mongod
 ###### run in visual studio the project(first file to run bin/www)
-###### import postman file to postman for server calls
+###### import final project.postman_collection.json file to postman for server calls
