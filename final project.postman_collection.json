@@ -1,0 +1,1366 @@
+{
+	"info": {
+		"_postman_id": "d31b59a2-a338-4707-bd6c-3580b5c74e05",
+		"name": "final project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "restaurants",
+			"item": [
+				{
+					"name": "create restaurant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"restaurant\":\n\t{\n    \"openingHours\" : {\n        \"sunday\" : {\n            \"open\" : 12,\n            \"close\" : 0\n        },\n        \"monday\" : {\n            \"open\" : 12,\n            \"close\" : 0\n        },\n        \"tuesday\" : {\n            \"open\" : 12,\n            \"close\" : 0\n        },\n        \"wednesday\" : {\n            \"open\" : 13,\n            \"close\" : 0\n        },\n        \"thursday\" : {\n            \"open\" : 13,\n            \"close\" : 0\n        },\n        \"friday\" : {\n            \"open\" : 11,\n            \"close\" : 0\n        },\n        \"saturday\" : {\n            \"open\" : 10,\n            \"close\" : 23\n        }\n    },\n    \"imagesUrl\" : [],\n    \"dishes\" : [\"5c97768849942b3d528e8858\", \"5c97768849942b3d528e8858\",\"5c97774849942b3d528e885a\",\"5c97778449942b3d528e885b\"],\n    \"name\" : \"port said\",\n    \"chef\" : \"5c9777e549942b3d528e885e\",\n    \"cuisine\" :{\n    \t\"name\":\"italian\",\n    \t\"imageUrl\":\"https://www.tokyo.grand.hyatt.co.jp/en/restaurants/french-kitchen-tokyo/\"\n    \t},\n    \"openingDate\" : \"2019-03-22\",\n    \"address\" : \"har sinay 3\",\n    \"phone\" : \"1232482181\",\n    \"about\" : \"hupster place blablalbal. \",\n    \"rating\" : 6\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{url}}api/restaurants",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all cuisine of the website",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/restaurants/home",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								"home"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search restaurant by name/chef/cuisine",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/restaurants/search/?q=itialian",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "itialian"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all cuisine specific type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/restaurants/?sortField=cuisine&param=italian",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								""
+							],
+							"query": [
+								{
+									"key": "sortField",
+									"value": "cuisine"
+								},
+								{
+									"key": "param",
+									"value": "italian"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all restaurants",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/restaurants",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get new restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/restaurants/?sortField=new",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								""
+							],
+							"query": [
+								{
+									"key": "sortField",
+									"value": "new"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get popular restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/restaurants/?sortField=popular",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								""
+							],
+							"query": [
+								{
+									"key": "sortField",
+									"value": "popular"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get open restaurants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/restaurants/?sortField=open",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								""
+							],
+							"query": [
+								{
+									"key": "sortField",
+									"value": "open"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all chef restaurant by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/restaurants/?sortField=chef&param=5c9777bf49942b3d528e885c",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								""
+							],
+							"query": [
+								{
+									"key": "sortField",
+									"value": "chef"
+								},
+								{
+									"key": "param",
+									"value": "5c9777bf49942b3d528e885c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get restaurant profile by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/restaurants/5c972845ac1c662ceba5708f/?action=profile",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								"5c972845ac1c662ceba5708f",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "profile"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get restaurant info by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/restaurants/5c972845ac1c662ceba5708f/?action=info",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								"5c972845ac1c662ceba5708f",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "info"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get restaurant dishes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/restaurants/5c97789c49942b3d528e885f/?action=dishes",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								"5c97789c49942b3d528e885f",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "dishes"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get menu of a restaurant by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/restaurants/5c97789c49942b3d528e885f/?action=menu",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								"5c97789c49942b3d528e885f",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "menu"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "is restaurant open right now",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/restaurants/5c97789c49942b3d528e885f/?action=open",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								"5c97789c49942b3d528e885f",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "open"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get rstaurant specific dishes catagory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/restaurants/5c97789c49942b3d528e885f/?action=dishCatagory&param=dinner",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								"5c97789c49942b3d528e885f",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "dishCatagory"
+								},
+								{
+									"key": "param",
+									"value": "dinner"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add dish to restaurant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/restaurants/5c84c6b8046f3c6c47b64668/?action=edit&param=5c8e1c03a66e8fe70575b7e6",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants",
+								"5c84c6b8046f3c6c47b64668",
+								""
+							],
+							"query": [
+								{
+									"key": "action",
+									"value": "edit"
+								},
+								{
+									"key": "param",
+									"value": "5c8e1c03a66e8fe70575b7e6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TEST SERVER DEPLOY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/restaurants",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chefs",
+			"item": [
+				{
+					"name": "create chef",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"chef\": \n\t{\n\t\t\"name\": \"moshiko\",\n\t\t\"personalStory\":\"eyal shani story....... \",\n\t\t\"imageUrl\":\"https://images1.ynet.co.il/PicServer5/2017/01/25/7541840/7534819297996980593no.jpg\"\n\t\t\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{url}}api/chefs",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"chefs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get chef by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/chefs/5c9777bf49942b3d528e885c",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"chefs",
+								"5c9777bf49942b3d528e885c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all chefs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/jason",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/chefs",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"chefs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dishes",
+			"item": [
+				{
+					"name": "create dish",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dish\": \n\t{\n\t\t\"name\": \"israli salad\",\n\t\t\"ingredients\":[\"tomatos\", \"cocumber\",\"carrut\"],\n\t\t\"sides\":[\"pepper\", \"salt\",\"oil olive\"],\n\t\t\"changes\":[\"with bread\",\"with brown bread\"],\n\t\t\"catagory\":\"5c97747349942b3d528e8856\",\n\t\t\"price\": 82.5,\n\t\t\"icons\":[\"5c9773d43da1d33d458a6069\",\"5c9773e33da1d33d458a606a\"],\n\t\t\"imageUrl\":\"https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/phut_0.jpg?itok=Bzo3z1cD\"\n\t\t\n\t}\n}\n"
+						},
+						"url": {
+							"raw": "http://34.244.23.98:3000/api/dishes",
+							"protocol": "http",
+							"host": [
+								"34",
+								"244",
+								"23",
+								"98"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"dishes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get dish by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/dishes/5c84c0ef6d5b736bcd24c418",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"dishes",
+								"5c84c0ef6d5b736bcd24c418"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "dish catagory",
+					"item": [
+						{
+							"name": "create dish catagory",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJuYW1lIjoibmF2b3QifSwiaWF0IjoxNTUzNDI5Mjk3LCJleHAiOjE1NTM0NTgwOTd9.NX6zqJCUyapEJeW3YlZ6oBHsa1p5vlIEjK8Fa_Up_oI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"object\": \n\t{\n\t\t\"name\":\"dinner\",\n\t\t\"restaurant_id\":\"\"\n\t}\n}\n\n"
+								},
+								"url": {
+									"raw": "http://34.244.23.98:3000/api/admin/?objectType=dishCatagory",
+									"protocol": "http",
+									"host": [
+										"34",
+										"244",
+										"23",
+										"98"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"admin",
+										""
+									],
+									"query": [
+										{
+											"key": "objectType",
+											"value": "dishCatagory"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "icons",
+					"item": [
+						{
+							"name": "create icon",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJuYW1lIjoibmF2b3QifSwiaWF0IjoxNTUzNDI5Mjk3LCJleHAiOjE1NTM0NTgwOTd9.NX6zqJCUyapEJeW3YlZ6oBHsa1p5vlIEjK8Fa_Up_oI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"object\": \n\t{\n\t\t\"name\":\"spicy\",\n\t\t\"imageUrl\":\"https://thumbs.dreamstime.com/z/vegan-icon-specially-designed-small-size-viewing-black-vector-logo-white-background-119831532.jpg\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "http://34.244.23.98:3000/api/admin/?objectType=icon&=",
+									"protocol": "http",
+									"host": [
+										"34",
+										"244",
+										"23",
+										"98"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"admin",
+										""
+									],
+									"query": [
+										{
+											"key": "objectType",
+											"value": "icon"
+										},
+										{
+											"key": "",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "sign up admin and add to db",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\": {\n\t\t\"full_name\":\"guy slavin\",\n\t\t\"email\":\"guy@gmail.com\",\n\t\t\"address\": \"ramat ha sharon\",\n\t\t\"phone_number\":\"11111111\",\n\t\t\"password\":\"2019\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admins/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admins",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InNob3BwaW5nX2JhZyI6W3siY2hhbmdlcyI6WyJ3aXRoIHR1bmEiXSwic2lkZXMiOlsic2FsdCIsImxlbW9uIl0sIm5hbWUiOiJncmVlayBzYWxhZCIsInF1YW50aXR5IjoyLCJwcmljZSI6NjAsInRvdGFsX3ByaWNlIjoxMjAsImRpc2hfaWQiOiI1Yzg0YzFmNDZkNWI3MzZiY2QyNGM0MTkifSx7ImNoYW5nZXMiOlsid2l0aCBhZ2ciXSwic2lkZXMiOlsic2FsdCJdLCJuYW1lIjoiaXNyYWxpIHNhbGFkIiwicXVhbnRpdHkiOjMsInByaWNlIjo1MSwidG90YWxfcHJpY2UiOjE1MywiZGlzaF9pZCI6IjVjODRjMjIzNmQ1YjczNmJjZDI0YzQxYSJ9XSwiZnVsbF9uYW1lIjoiZ3V5IHNsYXZpbiIsImVtYWlsIjoiZ3V5QGdtYWlsLmNvbSIsImFkZHJlc3MiOiJyYW1hdCBoYSBzaGFyb24iLCJwaG9uZV9udW1iZXIiOiIxMTExMTExMSJ9LCJpYXQiOjE1NTI0NjcyMDcsImV4cCI6MTU1MjQ3ODAwN30.4He5iEKP3jwVDFCMOsgt3TkzuFhv8fXtAXBkFb2bbhg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"guy@gmail.com\",\n\t\"password\":\"2019\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admins/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admins",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJuYW1lIjoibmF2b3QifSwiaWF0IjoxNTUzMDg5NDEyLCJleHAiOjE1NTMxMTgyMTJ9.QkWtsQCRsNGtRXHVcRmpDFYkPgbRTXgSd0yFhgV3l4I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/?objectType=user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								""
+							],
+							"query": [
+								{
+									"key": "objectType",
+									"value": "user"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all icons",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJuYW1lIjoibmF2b3QifSwiaWF0IjoxNTUzMDg5NDEyLCJleHAiOjE1NTMxMTgyMTJ9.QkWtsQCRsNGtRXHVcRmpDFYkPgbRTXgSd0yFhgV3l4I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/?objectType=icon&=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								""
+							],
+							"query": [
+								{
+									"key": "objectType",
+									"value": "icon"
+								},
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all orders of user by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJuYW1lIjoibmF2b3QifSwiaWF0IjoxNTUzMDg5NDEyLCJleHAiOjE1NTMxMTgyMTJ9.QkWtsQCRsNGtRXHVcRmpDFYkPgbRTXgSd0yFhgV3l4I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/orders/?userId=5c87e8e64a9a790ea8edc697",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"orders",
+								""
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "5c87e8e64a9a790ea8edc697"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "try user token on admin opp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InNob3BwaW5nX2JhZyI6W10sImZ1bGxfbmFtZSI6Im1vc2hlIiwiZW1haWwiOiJndXlAZ21haWwuY29tIiwiYWRkcmVzcyI6ImRpemluZ29mIDEyMyBCIHRlbCBhdml2ICIsInBob25lX251bWJlciI6IjExMTExMTExMSJ9LCJpYXQiOjE1NTMwODkxNDcsImV4cCI6MTU1MzA5OTk0N30.isoRC-wnVCXP6ENSPlo2I5Em18Ma5F4rHZigQi30PUE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://34.244.23.98:3000/api/admin/?objectType=user&=",
+							"protocol": "http",
+							"host": [
+								"34",
+								"244",
+								"23",
+								"98"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								""
+							],
+							"query": [
+								{
+									"key": "objectType",
+									"value": "user"
+								},
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "test ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "sign up user and add to db",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\": {\n\t\t\"full_name\":\"guy slavin\",\n\t\t\"email\":\"guy@gmail.com\",\n\t\t\"address\": \"reut\",\n\t\t\"phone_number\":\"0546838475\",\n\t\t\"password\":\"2019\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{url}}api/users/signup",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InNob3BwaW5nX2JhZyI6W3siY2hhbmdlcyI6WyJ3aXRoIHR1bmEiXSwic2lkZXMiOlsic2FsdCIsImxlbW9uIl0sIm5hbWUiOiJncmVlayBzYWxhZCIsInF1YW50aXR5IjoyLCJwcmljZSI6NjAsInRvdGFsX3ByaWNlIjoxMjAsImRpc2hfaWQiOiI1Yzg0YzFmNDZkNWI3MzZiY2QyNGM0MTkifSx7ImNoYW5nZXMiOlsid2l0aCBhZ2ciXSwic2lkZXMiOlsic2FsdCJdLCJuYW1lIjoiaXNyYWxpIHNhbGFkIiwicXVhbnRpdHkiOjMsInByaWNlIjo1MSwidG90YWxfcHJpY2UiOjE1MywiZGlzaF9pZCI6IjVjODRjMjIzNmQ1YjczNmJjZDI0YzQxYSJ9XSwiZnVsbF9uYW1lIjoiZ3V5IHNsYXZpbiIsImVtYWlsIjoiZ3V5QGdtYWlsLmNvbSIsImFkZHJlc3MiOiJyYW1hdCBoYSBzaGFyb24iLCJwaG9uZV9udW1iZXIiOiIxMTExMTExMSJ9LCJpYXQiOjE1NTI0NjcyMDcsImV4cCI6MTU1MjQ3ODAwN30.4He5iEKP3jwVDFCMOsgt3TkzuFhv8fXtAXBkFb2bbhg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"guy@gmail.com\",\n\t\"password\":\"2019\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}api/users/login",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InNob3BwaW5nX2JhZyI6W10sImZ1bGxfbmFtZSI6Imd1eSBzbGF2aW4iLCJlbWFpbCI6Imd1eUBnbWFpbC5jb20iLCJhZGRyZXNzIjoicmV1dCIsInBob25lX251bWJlciI6IjA1NDY4Mzg0NzUifSwiaWF0IjoxNTUzNDI5NzIyLCJleHAiOjE1NTM0NDA1MjJ9.3_9p4UiJnIuLzdahFUGAocWTfDmdwrdOjuoXLURBVtw",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"full_name\":\"guy2\",\n\t\"email\":\"guy@gmail.com\",\n\t\"phone_number\":\"111111111\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}api/users",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user details by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InNob3BwaW5nX2JhZyI6W10sImZ1bGxfbmFtZSI6Imd1eSBzbGF2aW4iLCJlbWFpbCI6Imd1eUBnbWFpbC5jb20iLCJhZGRyZXNzIjoicmV1dCIsInBob25lX251bWJlciI6IjA1NDY4Mzg0NzUifSwiaWF0IjoxNTUzNDI5NzIyLCJleHAiOjE1NTM0NDA1MjJ9.3_9p4UiJnIuLzdahFUGAocWTfDmdwrdOjuoXLURBVtw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}api/users/5c9774da49942b3d528e8857",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"users",
+								"5c9774da49942b3d528e8857"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add meal to db and update shopping bag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InNob3BwaW5nX2JhZyI6W10sImZ1bGxfbmFtZSI6Imd1eTIiLCJlbWFpbCI6Imd1eUBnbWFpbC5jb20iLCJhZGRyZXNzIjoicmV1dCIsInBob25lX251bWJlciI6IjExMTExMTExMSJ9LCJpYXQiOjE1NTM0NDExMTUsImV4cCI6MTU1MzQ1MTkxNX0.CTHLQoEDFvBCvQs-o7jWLLXJUhB4VOcfnQQ4SuqhEB8",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"meal\":\n\t{\n\t\t\"user_id\":\"5c9774da49942b3d528e8857\",\n\t\t\"name\":\"pizza\",\n\t\t\"changes\":[\"with bread\"],\n\t\t\"sides\":[],\n\t\t\"quantity\":2,\n\t\t\"price\": 75,\n\t\t\"dish_id\":\"5c97774849942b3d528e885a\"\n\t}\n}\n\n\n\n"
+						},
+						"url": {
+							"raw": "{{url}}api/users/shoppingBag",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"users",
+								"shoppingBag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get shopping bag of user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InNob3BwaW5nX2JhZyI6W10sImZ1bGxfbmFtZSI6Imd1eSBzbGF2aW4iLCJlbWFpbCI6Imd1eUBnbWFpbC5jb20iLCJhZGRyZXNzIjoicmV1dCIsInBob25lX251bWJlciI6IjA1NDY4Mzg0NzUifSwiaWF0IjoxNTUzNDI5NzIyLCJleHAiOjE1NTM0NDA1MjJ9.3_9p4UiJnIuLzdahFUGAocWTfDmdwrdOjuoXLURBVtw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"guy@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}api/users/shoppingBag/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"users",
+								"shoppingBag",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get size of shopping bag",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InNob3BwaW5nX2JhZyI6W10sImZ1bGxfbmFtZSI6Imd1eSBzbGF2aW4iLCJlbWFpbCI6Imd1eUBnbWFpbC5jb20iLCJhZGRyZXNzIjoicmV1dCIsInBob25lX251bWJlciI6IjA1NDY4Mzg0NzUifSwiaWF0IjoxNTUzNDI5NzIyLCJleHAiOjE1NTM0NDA1MjJ9.3_9p4UiJnIuLzdahFUGAocWTfDmdwrdOjuoXLURBVtw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"guy@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}api/users/shoppingBag/?quantity=true",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"users",
+								"shoppingBag",
+								""
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create order - remember to change the body",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InNob3BwaW5nX2JhZyI6W10sImZ1bGxfbmFtZSI6Imd1eSBzbGF2aW4iLCJlbWFpbCI6Imd1eUBnbWFpbC5jb20iLCJhZGRyZXNzIjoicmV1dCIsInBob25lX251bWJlciI6IjA1NDY4Mzg0NzUifSwiaWF0IjoxNTUzNDI5NzIyLCJleHAiOjE1NTM0NDA1MjJ9.3_9p4UiJnIuLzdahFUGAocWTfDmdwrdOjuoXLURBVtw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"guy@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}api/users/order/?order=true",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"users",
+								"order",
+								""
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InNob3BwaW5nX2JhZyI6W10sImZ1bGxfbmFtZSI6Imd1eTIiLCJlbWFpbCI6Imd1eUBnbWFpbC5jb20iLCJhZGRyZXNzIjoicmV1dCIsInBob25lX251bWJlciI6IjExMTExMTExMSJ9LCJpYXQiOjE1NTM0NDExMTUsImV4cCI6MTU1MzQ1MTkxNX0.CTHLQoEDFvBCvQs-o7jWLLXJUhB4VOcfnQQ4SuqhEB8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"guy@gmail.com\",\n\t\"password\":\"2019\",\n\t\"new_password\":\"2020\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}api/users/password",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"users",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "contact us",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InNob3BwaW5nX2JhZyI6W10sImZ1bGxfbmFtZSI6Imd1eSBzbGF2aW4iLCJlbWFpbCI6Imd1eUBnbWFpbC5jb20iLCJhZGRyZXNzIjoicmV1dCIsInBob25lX251bWJlciI6IjA1NDY4Mzg0NzUifSwiaWF0IjoxNTUzNDI5NzIyLCJleHAiOjE1NTM0NDA1MjJ9.3_9p4UiJnIuLzdahFUGAocWTfDmdwrdOjuoXLURBVtw",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"slavin.navot@gmail.com\",\n\t\"message\":\"Hi, this is my first email using node js. test!\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}api/users/contactUs",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"users",
+								"contactUs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "terms of use",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "barrer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InNob3BwaW5nX2JhZyI6W10sImZ1bGxfbmFtZSI6Imd1eSBzbGF2aW4iLCJlbWFpbCI6Imd1eUBnbWFpbC5jb20iLCJhZGRyZXNzIjoicmV1dCIsInBob25lX251bWJlciI6IjA1NDY4Mzg0NzUifSwiaWF0IjoxNTUzNDI5NzIyLCJleHAiOjE1NTM0NDA1MjJ9.3_9p4UiJnIuLzdahFUGAocWTfDmdwrdOjuoXLURBVtw",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/users/termsOfUse",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"users",
+								"termsOfUse"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f7ab4900-6ee4-4c68-b5bb-66af565e01b1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7c4a496c-17f7-4aec-9b1c-d75f850b7b2e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "67913e99-9d09-4a24-8cb1-93083cea7ced",
+			"key": "url",
+			"value": "http://localhost:3000/",
+			"type": "string"
+		},
+		{
+			"id": "c49ccc46-dcce-4882-bf95-7c4ce50bf16d",
+			"key": "url2",
+			"value": "ec2-34-253-183-22.eu-west-1.compute.amazonaws.com:27017",
+			"type": "string"
+		}
+	]
+}
