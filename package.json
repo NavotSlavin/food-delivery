@@ -20,7 +20,7 @@
     "fs": "0.0.1-security",
     "http-errors": "~1.6.2",
     "moment": "^2.24.0",
-    "mongoose": "^5.4.15",
+    "mongoose": "^5.7.5",
     "underscore": "^1.9.1",
     "validator": "^10.11.0"
   }
