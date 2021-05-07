@@ -21,7 +21,7 @@
     "http-errors": "~1.6.2",
     "moment": "^2.24.0",
     "mongoose": "^5.4.15",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "validator": "^10.11.0"
   }
 }
